@@ -1,0 +1,130 @@
+{
+  "_note": "Reference copy of the numbers in orb/cnmbuck-orb.ts. The .ts file is the source of truth; if they ever differ, the .ts wins.",
+  "colors": {
+    "glassDeep": "#020818",
+    "glass": "#0c3486",
+    "bandOuter": "#0a8cff",
+    "band": "#00e5ff",
+    "bandCore": "#f0feff",
+    "rimBlue": "#00d8ff",
+    "rimOrange": "#ff9a1a"
+  },
+  "renderer": {
+    "outputColorSpace": "SRGB",
+    "toneMapping": "ACESFilmic",
+    "toneMappingExposure": 1.05
+  },
+  "material": {
+    "type": "MeshPhysicalMaterial",
+    "roughness": 0.08,
+    "metalness": 0,
+    "clearcoat": 1,
+    "clearcoatRoughness": 0.08,
+    "emissive": "#ffffff",
+    "emissiveIntensity": 2.6,
+    "textureSize": [
+      512,
+      256
+    ],
+    "anisotropy": 4,
+    "sphereSegments": [
+      48,
+      32
+    ]
+  },
+  "band": {
+    "formula": "0.42*y + 0.88*x - 0.12*sin(3*atan2(y, z))",
+    "colorMap": {
+      "glassMix": "0.45 + 0.55*y + 0.12*wob(x,y,z,3)",
+      "outerWidth": 0.34,
+      "outerStrength": 0.7,
+      "bandWidth": 0.16,
+      "coreWidth": 0.06
+    },
+    "glowMap": {
+      "dark": [
+        "#000208",
+        "#020c2e"
+      ],
+      "outerWidth": 0.36,
+      "bandWidth": 0.18,
+      "coreWidth": 0.06,
+      "core": "#ffffff"
+    }
+  },
+  "fx": {
+    "rim": {
+      "radiusScale": 1.08,
+      "fresnelPower": 2.4,
+      "warmSmoothstep": [
+        -0.2,
+        0.6
+      ],
+      "strength": 2.4,
+      "warmBoost": 1.0,
+      "blending": "additive"
+    },
+    "pulse": "0.85 + 0.15*sin(3t)",
+    "halo": {
+      "scale": 4.2,
+      "inner": "rgba(0,220,255,0.9)",
+      "outer": "rgba(0,150,255,0.35)",
+      "opacity": "0.5*pulse"
+    },
+    "groundGlow": {
+      "default": true,
+      "size": 6,
+      "lift": 0.07,
+      "inner": "rgba(60,190,255,0.85)",
+      "outer": "rgba(40,120,255,0.4)",
+      "maxOpacity": 0.8,
+      "fadeRadii": 5
+    },
+    "trail": {
+      "length": 26,
+      "life": 0.45,
+      "spacing": 0.35,
+      "size": 2.1,
+      "colorOld": "#ff9a1a",
+      "colorFresh": "#00d8ff",
+      "blending": "normal"
+    }
+  },
+  "icon": {
+    "ballRadius": 0.38,
+    "halo": {
+      "from": 0.9,
+      "to": 1.32,
+      "color": "rgba(0,200,255,0.55)"
+    },
+    "ring": {
+      "extra": 0.03,
+      "stops": [
+        "#00d8ff",
+        "#3a7aff",
+        "#ff9a1a"
+      ]
+    },
+    "body": [
+      "#2a62e8",
+      "#0a2470",
+      "#020a1e"
+    ],
+    "warm": "rgba(255,150,30,0.8)",
+    "bandAngle": -0.42,
+    "bandStrokes": [
+      [
+        "rgba(0,170,255,0.9)",
+        0.34
+      ],
+      [
+        "#00e5ff",
+        0.18
+      ],
+      [
+        "#ffffff",
+        0.07
+      ]
+    ]
+  }
+}

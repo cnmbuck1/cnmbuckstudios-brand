@@ -1,0 +1,20 @@
+{
+  "name": "cnmbuckstudios-brand",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Cnmbuck Studios brand kit: the Cnmbuck Orb and logo assets, shared by every Cnmbuck game.",
+  "type": "module",
+  "scripts": {
+    "render": "node tools/render.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "three": ">=0.160.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.187.0",
+    "three": "^0.187.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}
